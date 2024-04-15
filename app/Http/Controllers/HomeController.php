@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -17,7 +16,7 @@ class HomeController extends Controller
         return view('home', [
             'featuredPosts' => Post::published()->featured()->latest('published_at')->take(3)->get(),
 
-            'latestPosts' => Post::published()->latest('published_at')->take(3)->get(),
+            'latestPosts' => Post::published()->latest('published_at')->take(9)->get(),
         ]);
     }
 }
