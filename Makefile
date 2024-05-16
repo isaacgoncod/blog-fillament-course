@@ -38,3 +38,14 @@ restart:	down up
 .PHONY:	play
 play:
 	@./vendor/bin/sail art play
+
+.PHONY:	run-build
+run-build:
+	@echo "--> Building assets..."
+	@./vendor/bin/sail npm run build
+
+.PHONY:	run-dev
+run-dev:
+	@echo "--> Building assets and watching..."
+	@./vendor/bin/sail npm run build
+	@./vendor/bin/sail npm run dev
